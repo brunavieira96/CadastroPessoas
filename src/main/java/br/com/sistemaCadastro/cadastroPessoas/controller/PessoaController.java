@@ -21,7 +21,7 @@ public class PessoaController {
     }
 
     @PostMapping("/addPessoas")
-    public List<Pessoa> addPessoa(@RequestBody List<Pessoa> pessoas) {
+    public List<Pessoa> addPessoas(@RequestBody List<Pessoa> pessoas) {
         return service.savePessoa(pessoas);
     }
 
