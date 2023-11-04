@@ -1,9 +1,6 @@
 package br.com.sistemaCadastro.cadastroPessoas.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,12 +13,17 @@ import lombok.NoArgsConstructor;
 public class Pessoa {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @Column(nullable = false)
     private String nome;
+    @Column
     private String endereco;
+    @Column
     private String cep;
+    @Column
     private String cidade;
+    @Column
     private String uf;
 
 }

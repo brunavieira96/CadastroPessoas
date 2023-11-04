@@ -31,17 +31,17 @@ public class PessoaController {
         return service.getAll();
     }
 
-    @GetMapping("/produto/{id}")
+    @GetMapping("/pessoa/{id}")
     public Optional<Pessoa> findPessoaById(@PathVariable int id) {
         return service.getPessoaById(id);
     }
 
-    @PutMapping("/update")
+    @PutMapping("/updatePessoa")
     public Pessoa atualizarPessoa(@RequestBody Pessoa pessoa) {
         return service.update(pessoa);
     }
 
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/deletePessoa/{id}")
     public void delete(@PathVariable int id) {
         service.delete(id);
     }
