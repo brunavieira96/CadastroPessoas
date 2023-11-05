@@ -1,4 +1,11 @@
 package br.com.sistemaCadastro.cadastroPessoas.service;
 
-public interface ContatoService {
+import br.com.sistemaCadastro.cadastroPessoas.repository.ContatoRepository;
+import br.com.sistemaCadastro.cadastroPessoas.service.interfaces.ContatoServiceInterface;
+import org.springframework.stereotype.Service;
+
+@Service
+public interface ContatoService extends ContatoServiceInterface {
+
+
 }
