@@ -59,7 +59,7 @@ public class PessoaResource {
 
     }
 
-    @DeleteMapping("/{/id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<?> delete(@PathVariable int id) {
         pessoaService.delete(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
