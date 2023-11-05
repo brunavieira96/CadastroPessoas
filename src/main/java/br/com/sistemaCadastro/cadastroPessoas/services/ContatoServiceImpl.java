@@ -1,4 +1,4 @@
-package br.com.sistemaCadastro.cadastroPessoas.service;
+package br.com.sistemaCadastro.cadastroPessoas.services;
 
 import br.com.sistemaCadastro.cadastroPessoas.model.Contato;
 import br.com.sistemaCadastro.cadastroPessoas.repository.ContatoRepository;
@@ -8,7 +8,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-@ComponentScan("br.com.sistemaCadastro.cadastroPessoas.resource")
+
+
 @Service
 public class ContatoServiceImpl implements ContatoService {
 
@@ -40,6 +41,8 @@ public class ContatoServiceImpl implements ContatoService {
             Contato newContato =upContato.get();
             newContato.setTipo(contato.getTipo());
             newContato.setContato(contato.getContato());
+            newContato.setIdpessoa(contato.getIdpessoa());
+            newContato.setIdpessoa(contato.getIdpessoa());
             return contatoRepository.save(newContato);
 
 

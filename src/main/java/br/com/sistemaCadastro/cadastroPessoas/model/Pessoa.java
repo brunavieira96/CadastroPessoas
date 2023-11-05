@@ -1,6 +1,5 @@
 package br.com.sistemaCadastro.cadastroPessoas.model;
 
-import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -27,7 +26,7 @@ public class Pessoa {
     private String uf;
 
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "idPessoa")
+    @JoinColumn(name ="pessoa_id", referencedColumnName = "id")
     private List<Contato> contatoLista;
 
     public Pessoa() {
@@ -35,13 +34,14 @@ public class Pessoa {
 
     }
 
-    public Pessoa(int id, String nome, String endereco, String cep, String cidade, String uf) {
+    public Pessoa(int id, String nome, String endereco, String cep, String cidade, String uf, List<Contato> contatoLista) {
         this.id = id;
         this.nome = nome;
         this.endereco = endereco;
         this.cep = cep;
         this.cidade = cidade;
         this.uf = uf;
+        this.contatoLista = contatoLista;
     }
 
     public int getId() {
@@ -90,6 +90,15 @@ public class Pessoa {
 
     public void setUf(String uf) {
         this.uf = uf;
+    }
+
+
+    public List<Contato> getContatoLista() {
+        return contatoLista;
+    }
+
+    public void setContatoLista(List<Contato> contatoLista) {
+        this.contatoLista = contatoLista;
     }
 
     @Override

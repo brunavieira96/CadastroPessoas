@@ -13,24 +13,20 @@ public class Contato {
     private int id;
 
     @Column(nullable = false)
-    private String tipoContato;
+    private String tipo;
 
-    @Column
+
     private String contato;
-
-    @Column
-    private Integer idPessoa;
 
     private Contato() {
 
     }
 
-
-    public Contato(int id, String tipoContato, String contato, Integer idPessoa) {
+    public Contato(int id, String tipo, String contato) {
         this.id = id;
-        this.tipoContato = tipoContato;
+        this.tipo = tipo;
         this.contato = contato;
-        this.idPessoa = idPessoa;
+
     }
 
     public int getId() {
@@ -41,12 +37,12 @@ public class Contato {
         this.id = id;
     }
 
-    public String getTipoContato() {
-        return tipoContato;
+    public String getTipo() {
+        return tipo;
     }
 
-    public void setTipoContato(String tipoContato) {
-        this.tipoContato = tipoContato;
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 
     public String getContato() {
@@ -57,13 +53,8 @@ public class Contato {
         this.contato = contato;
     }
 
-    public Integer getIdPessoa() {
-        return idPessoa;
-    }
 
-    public void setIdPessoa(Integer idPessoa) {
-        this.idPessoa = idPessoa;
-    }
+
 
     @Override
     public boolean equals(Object o) {
